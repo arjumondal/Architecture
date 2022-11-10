@@ -1,0 +1,16 @@
+8×3 encoder circuit
+library ieee;
+use ieee.std_logic_1164.all;
+entity encoder_8x3 is
+port (d : in std logic vector (7 downto 0);
+a,b,c : out std_logis);
+end encoder 8x3;
+architecture encoder_arch of encoder_8x3 is
+begin
+process (d)
+begin
+a <= d(4) or d(5) or d(6) or d(7);
+b <= d(2) or d(3) or d(6) or d(7);
+c <= d(1) or d(3) or d(5) or d(7);
+end process;
+end encoder arch;

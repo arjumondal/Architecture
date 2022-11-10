@@ -1,0 +1,17 @@
+VHDL Code of 4 X 1 Multiplexer
+Library ieee;
+use ieee.std_logic_1164.all;
+entity mux_41 is
+port( signal data :in std_logic_vector(3 downto 0);
+signal select_line: in std_logic_vector(1 downto 0);
+signal enable: in std_logic;
+signal output:out std_logic  );
+end mux_41;
+architecture sim of mux_41 is
+begin
+output<= data(3) when select_line="00" and enable='1' else
+data(2) when select_line="01"  and enable='1'  else
+data(1) when select_line="10"  and enable='1'  else
+data(0) when select_line="11"  and enable='1'  else
+'X';
+end sim;
